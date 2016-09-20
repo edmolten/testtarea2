@@ -10,6 +10,6 @@ package cl.usm.lp20162;
  * @author eddox
  */
 public class Player {
-    int crossAtackLeft = 4;
+    int crossAttackLeft = 4;
    
 }

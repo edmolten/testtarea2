@@ -3,10 +3,13 @@ package cl.usm.lp20162;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class Ship {
+
+    static ArrayList<Ship> initShips() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
+    }
     
     private class BodyPart{
         Rectangle rect;
@@ -26,9 +29,9 @@ public class Ship {
         Rectangle r;
         bodyParts = new ArrayList<BodyPart>();
         
-        for(float x = position.x ; x != cellsHorizontal * TestTarea2.cellWidth; x += TestTarea2.cellWidth){
-            for(float y = position.y ; x != cellsVertical * TestTarea2.cellWidth; x += TestTarea2.cellWidth){
-                r = new Rectangle(position.x, position.y, TestTarea2.cellWidth, TestTarea2.cellWidth);
+        for(float x = position.x ; x != cellsHorizontal * TestTarea2.CELL_SIDE; x += TestTarea2.CELL_SIDE){
+            for(float y = position.y ; x != cellsVertical * TestTarea2.CELL_SIDE; x += TestTarea2.CELL_SIDE){
+                r = new Rectangle(position.x, position.y, TestTarea2.CELL_SIDE, TestTarea2.CELL_SIDE);
                 bodyParts.add(new BodyPart(r));
             }
         }
@@ -41,6 +44,7 @@ public class Ship {
             partPosition = new Vector2(bodyPart.rect.x, bodyPart.rect.y);
             difference = newPosition.sub(partPosition);
             bodyPart.rect.x = partPosition.add(difference).x;
+            bodyPart.rect.y = partPosition.add(difference).y;
             
         }
     }
