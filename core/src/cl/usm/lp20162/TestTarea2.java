@@ -51,7 +51,7 @@ public class TestTarea2 extends ApplicationAdapter {
         Gdx.gl.glLineWidth(1);
         renderer.setProjectionMatrix(camera.combined);
         board = new Board();
-        connectorManager = new ConnectionManager();
+        
         ships = Ship.initShips();
         skin = new  Skin(Gdx.files.internal("uiskin.json"));
         stage = new Stage();
@@ -59,6 +59,8 @@ public class TestTarea2 extends ApplicationAdapter {
         Gdx.input.setInputProcessor(stage);
         
         setButtons();
+        connectorManager = new ConnectionManager();
+        labelDetails.setText(connectorManager.ipAddress);
     }
 
     private void setButtons() {
@@ -69,7 +71,7 @@ public class TestTarea2 extends ApplicationAdapter {
         vg.setBounds(20, 0, MENU_WIDTH, SCREEN_HEIGHT);
 
         // Create our controls
-        labelDetails = new Label(connectorManager.ipAddress, skin);
+        labelDetails = new Label("", skin);
         labelMessage = new Label("Hello world", skin);
         button = new TextButton("Send message", skin);
         textIPAddress = new TextArea("", skin);
