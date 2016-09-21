@@ -44,9 +44,8 @@ public class ConnectionManager {
         
         // Print the contents of our array to a string.  Yeah, should have used StringBuilder
         ipAddress = "";
-        for(String str:addresses)
-        {
-            ipAddress.concat(str + "\n");
+        for(String str : addresses){
+            ipAddress = ipAddress.concat(str + "\n");
         }
 
     }
