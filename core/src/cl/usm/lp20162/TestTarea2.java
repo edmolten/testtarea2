@@ -66,7 +66,7 @@ public class TestTarea2 extends ApplicationAdapter {
         // Vertical group groups contents vertically.  I suppose that was probably pretty obvious
         VerticalGroup vg = new VerticalGroup().space(3).pad(5);//.space(2).pad(5).fill();//.space(3).reverse().fill();
         // Set the bounds of the group to the entire virtual display
-        vg.setBounds(0, 0, MENU_WIDTH, SCREEN_HEIGHT);
+        vg.setBounds(20, 0, MENU_WIDTH, SCREEN_HEIGHT);
 
         // Create our controls
         labelDetails = new Label(connectorManager.ipAddress, skin);
