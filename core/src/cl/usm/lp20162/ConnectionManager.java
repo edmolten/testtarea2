@@ -27,6 +27,12 @@ public class ConnectionManager {
     public String ipAddress;
 
     public ConnectionManager() {
+        setupAdresses();
+        createServer();
+        createSendFunction();
+    }
+    
+    private void setupAdresses(){
         List<String> addresses = new ArrayList<String>();
         try {
             Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
@@ -47,10 +53,9 @@ public class ConnectionManager {
         for(String str : addresses){
             ipAddress = ipAddress.concat(str + "\n");
         }
-
     }
     
-    public void createServer(){
+    private void createServer(){
         // Now we create a thread that will listen for incoming socket connections
         new Thread(new Runnable(){
 
@@ -84,7 +89,7 @@ public class ConnectionManager {
         }).start(); // And, start the thread running
     }
     
-    public void send(){
+    private void createSendFunction(){
         // Wire up a click listener to our button
         TestTarea2.button.addListener(new ClickListener(){
             @Override 
